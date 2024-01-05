@@ -3,12 +3,12 @@
   {% for post in posts %}
     <div class="card mb-4">
       <div class="card-header">
-        Quote
+        {{ post.title }}
       </div>
       <div class="card-body">
         <blockquote class="blockquote mb-0">
           <p>{{ post.content }}</p>
-          <footer class="blockquote-footer">{{ post.author }} <cite title="Source Title">{{ post.title }}</cite></footer>
+          <footer class="blockquote-footer">{{ post.author }} <cite title="Source Title"> {{ post.date_posted|date:"m-d-Y" }}  </cite></footer>
         </blockquote>
       </div>
     </div>
