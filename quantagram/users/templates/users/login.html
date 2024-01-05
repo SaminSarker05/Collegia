@@ -4,19 +4,19 @@
     <form method="POST">
       {% csrf_token %}
       <fieldset class="form-group">
-        <legend class="border-bottom mb-4">join today</legend>
-          {{ form.as_p}}
+        <legend class="border-bottom mb-4">Login</legend>
+          {{ form}}
       </fieldset>
       <div class="form-group">
         <button class="btn btn-outline-info" type="submit">
-          Sign Up
+          LogIn
         </button>
       </div>
 
     </form>
     <div class="broder-top pt-3">
       <small class="text-muted">
-        Have an account? <a href="{% url 'login' %}">Login</a>
+        Don't Have an account? <a href="{% url 'register' %}">Signup</a>
       </small>
 
     </div>
@@ -24,11 +24,3 @@
   </div>
 
 {% endblock content %}
-
-
-<!-- user=ssarker -->
-<!-- pass=Hello123!-->
-
-
-<!-- user=ssarker30 -->
-<!-- pass=admin-->
