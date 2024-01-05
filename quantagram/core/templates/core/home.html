@@ -6,6 +6,7 @@
         {{ post.title }}
       </div>
       <div class="card-body">
+        <img src="{{ user.profile.image.url }}" alt="mdo" width="50" height="50" class="rounded-circle">
         <blockquote class="blockquote mb-0">
           <p>{{ post.content }}</p>
           <footer class="blockquote-footer">{{ post.author }} <cite title="Source Title"> {{ post.date_posted|date:"m-d-Y" }}  </cite></footer>
