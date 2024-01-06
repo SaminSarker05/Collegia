@@ -3,7 +3,7 @@
   {% for post in posts %}
     <div class="card mb-4">
       <div class="card-header">
-        {{ post.title }}
+        <a href="{% url 'detail' post.id %}">{{ post.title }}</a>
       </div>
       <div class="card-body">
         <img src="{{ user.profile.image.url }}" alt="mdo" width="50" height="50" class="rounded-circle">
