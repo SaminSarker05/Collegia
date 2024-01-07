@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Post
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from .forms import FoodSearchForm
+import requests
 
 def home(request):
   context = {
@@ -9,8 +11,44 @@ def home(request):
   }
   return render(request, 'core/home.html', context)
 
-def about(request):
-  return render(request, 'core/about.html')
+
+def budget(request):
+  return render(request, 'core/budget.html')
+
+
+def meal(request):
+  if request.method == 'POST':
+    form = FoodSearchForm(request.POST)
+    if form.is_valid():
+      food_name = form.cleaned_data['food_name']
+      food_info = get_food_information(food_query=food_name)
+
+      print(food_info)
+
+      context = {
+        'form': form,
+        'food_info': food_info,
+      }
+
+      return render(request, 'core/meal.html', context)
+  else:
+      form = FoodSearchForm()
+
+  context = {'form': form}
+  return render(request, 'core/meal.html', context)
+
+def get_food_information(food_query):
+    base_url = "https://www.themealdb.com/api/json/v1/1/search.php?s="
+    url = f"{base_url}{food_query}"
+
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        return response.json()
+    else:
+        # Handle error cases
+        return None
+
 
 class PostListView(ListView):
   model = Post
@@ -46,6 +84,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
   def test_func(self):
     post = self.get_object()
     return self.request.user == post.author
+
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
   model = Post
