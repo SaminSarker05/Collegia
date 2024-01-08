@@ -10,6 +10,6 @@ urlpatterns = [
   path('post/<int:pk>/update', PostUpdateView.as_view(), name="update"),
   path('post/<int:pk>/delete', PostDeleteView.as_view(), name="delete"),
   path('meal', views.meal, name="meal"),
-
+  path('search/', views.search, name='search'),
 
 ]

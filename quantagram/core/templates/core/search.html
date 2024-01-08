@@ -1,0 +1,22 @@
+
+
+
+{% extends "core/base.html" %}
+{% block content %}
+
+<form method="POST" action="{% url 'search' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Search</button>
+</form>
+
+{% if results %}
+  {% for post in results %}
+      <!-- Display post details as needed -->
+      {{ post.user.username }} - {{ post.title }} - {{ post.content }}
+  {% endfor %}
+{% endif %}
+
+  
+
+{% endblock content %}
