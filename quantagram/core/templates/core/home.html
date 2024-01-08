@@ -1,7 +1,29 @@
 {% extends "core/base.html" %}
 {% block content %}
+
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+
   {% for post in posts %}
-    <div class="card mb-4">
+    <div class="card col-5 mb-7" style="min-height: 500px;">
+      <div class="card-header d-flex align-items-center">
+        <img src="{{ user.profile.image.url }}" alt="mdo" width="50" height="50" class="rounded-circle">
+        <div class="ms-3">
+          <h6 class="mb-0 fs-sm">{{ post.author }}</h6>
+          <span class="text-muted fs-sm">{{ post.date_posted|date:"m-d-Y" }}</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <a class="card-text" href="{% url 'detail' post.id %}">{{ post.title }}</a>
+        <p class="card-text">
+          {{ post.content }}
+        </p>
+      </div>
+      <div class="card-footer d-flex">
+        <button class="btn btn-link p-0 me-auto fw-bold" href="#">Like</button>
+        <button class="btn btn-link p-0 fw-bold" href="#">Note</button>
+      </div>
+    </div>
+    <!-- <div class="card mb-4">
       <div class="card-header">
         <a href="{% url 'detail' post.id %}">{{ post.title }}</a>
       </div>
@@ -12,7 +34,11 @@
           <footer class="blockquote-footer">{{ post.author }} <cite title="Source Title"> {{ post.date_posted|date:"m-d-Y" }}  </cite></footer>
         </blockquote>
       </div>
-    </div>
+    </div> -->
   {% endfor %}
+
+</div>
+
+
 
 {% endblock content %}
