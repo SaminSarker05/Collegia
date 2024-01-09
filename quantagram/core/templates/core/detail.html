@@ -1,16 +1,12 @@
+
 {% extends "core/base.html" %}
 {% block content %}
   <div style="margin-bottom: 4em;">
-    <div class="card mb-4">
-      <div class="card-header">
-        {{ object.title }}
-      </div>
-      <div class="card-body">
-        <blockquote class="blockquote mb-4">
-          <p>{{ object.content }}</p>
-          <footer class="blockquote-footer">{{ object.author }} <cite title="Source Title"> {{ object.date_posted|date:"m-d-Y" }}  </cite></footer>
-        </blockquote>
 
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ object.title }}</h5>
+        <p class="card-text">{{ object.content|safe }}</p>
         {% if object.author == user %}
         <div>
           <a class="btn btn-secondary bnt-sm" href="{% url 'update' object.id %}">Update</a>
@@ -19,6 +15,7 @@
         {% endif %}
       </div>
     </div>
+
   </div>
 
 {% endblock content %}
