@@ -39,10 +39,30 @@
     {% endfor %}
   
 
-    <nav class="blog-pagination" aria-label="Pagination">
-      <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
-      <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
-    </nav>
+
+    {% if is_paginated %}
+    
+
+      {% if page_obj.has_previous %}
+        <a class="btn btn-outline-primary rounded-pill" href="?page=1">First</a>
+        <a class="btn btn-outline-primary rounded-pill" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+
+      {% for n in page_obj.paginator.page_range %}
+        {% if page_obj.number == n %}
+          <a class="btn btn-outline-primary rounded-pill" href="?page={{ n }}">{{ n }}</a>
+        {% elif n > page_obj.number|add:'-3' and n < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-primary rounded-pill" href="?page={{ n }}">{{ n }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn btn-outline-primary rounded-pill" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-primary rounded-pill" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      {% endif %}
+
+    {% endif %}
+
   </div>
   
 
@@ -90,5 +110,7 @@
     </div>
   </div>
 </div>
+
+
 
 {% endblock content %}
