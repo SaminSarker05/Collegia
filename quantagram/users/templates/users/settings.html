@@ -2,15 +2,14 @@
 {% block content %}
 
 
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" style="margin-bottom: 4em;">
       {% csrf_token %}
       <fieldset class="form-group">
-        <legend class="border-bottom mb-4">Profile</legend>
-          {{ p_form }}
+        <legend class="border-bottom mb-4">Your Profile</legend>
           {{ u_form }}
       </fieldset>
       <div class="form-group">
-        <button class="btn btn-outline-info" type="submit">
+        <button class="btn btn-outline-info" type="submit" style="margin-top: 1em;">
           Update
         </button>
       </div>

@@ -1,6 +1,6 @@
 {% extends "core/base.html" %}
 {% block content %}
-  <div class="content-section">
+  <div class="content-section" style="margin-bottom: 4em;">
     <form method="POST">
       {% csrf_token %}
       <fieldset class="form-group">
@@ -8,7 +8,7 @@
           {{ form}}
       </fieldset>
       <div class="form-group">
-        <button class="btn btn-outline-info" type="submit">
+        <button class="btn btn-outline-info" type="submit" style="margin-top: 1em;">
           LogIn
         </button>
       </div>

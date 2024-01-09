@@ -1,25 +1,24 @@
 {% extends "core/base.html" %}
 {% block content %}
-
-  <div class="card mb-4">
-    <div class="card-header">
-      {{ object.title }}
-    </div>
-    <div class="card-body">
-      <img src="{{ user.profile.image.url }}" alt="mdo" width="50" height="50" class="rounded-circle">
-      <blockquote class="blockquote mb-4">
-        <p>{{ object.content }}</p>
-        <footer class="blockquote-footer">{{ object.author }} <cite title="Source Title"> {{ object.date_posted|date:"m-d-Y" }}  </cite></footer>
-      </blockquote>
-
-      {% if object.author == user %}
-      <div>
-        <a class="btn btn-secondary bnt-sm" href="{% url 'update' object.id %}">Update</a>
-        <a class="btn btn-secondary bnt-sm" href="{% url 'delete' object.id %}">Delete</a>
+  <div style="margin-bottom: 4em;">
+    <div class="card mb-4">
+      <div class="card-header">
+        {{ object.title }}
       </div>
-      {% endif %}
+      <div class="card-body">
+        <blockquote class="blockquote mb-4">
+          <p>{{ object.content }}</p>
+          <footer class="blockquote-footer">{{ object.author }} <cite title="Source Title"> {{ object.date_posted|date:"m-d-Y" }}  </cite></footer>
+        </blockquote>
+
+        {% if object.author == user %}
+        <div>
+          <a class="btn btn-secondary bnt-sm" href="{% url 'update' object.id %}">Update</a>
+          <a class="btn btn-secondary bnt-sm" href="{% url 'delete' object.id %}">Delete</a>
+        </div>
+        {% endif %}
+      </div>
     </div>
-    
   </div>
 
 {% endblock content %}

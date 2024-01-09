@@ -1,44 +1,39 @@
 {% extends "core/base.html" %}
 {% block content %}
 
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-12 col-xl-4">
-  
-          <div class="card" style="border-radius: 15px;">
-            <div class="card-body text-center">
-              <div class="mt-3 mb-4">
-                <img src="{{ user.profile.image.url }}"
-                  class="rounded-circle img-fluid" style="width: 100px;" />
-              </div>
-              <h4 class="mb-2">{{ user.username }}</h4>
-              <p class="text-muted mb-4">@Programmer <span class="mx-2">|</span> <a
-                  href="#!">{{ user.email }}</a></p>
-              
-            </div>
+  <div style="margin-bottom: 4em;">
+
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-12 col-xl-4">
+
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body text-center">
+            <h4 class="mb-2">{{ user.username }}</h4>
+            <!-- <a href="#!">{{ user.email }}</a> -->
+            <h7> Joined: {{ user.date_joined }} </h7>
+            <h7> {{ user.email }}  </h7>
           </div>
-  
         </div>
+
       </div>
     </div>
+  </div>
+  <p style="font-size: 1.2em;"> Your Blog Posts: </p>
+  <div class="list-group" style="margin-bottom: 4em; margin-top: 2em;">
+    {% for post in posts %}
+      <a href="{% url 'detail' post.id %}" class="list-group-item list-group-item-action" aria-current="true">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Blog: {{ post.title }}</h5>
+          <small>{{ post.date_posted|date:"m-d-Y" }}</small>
+        </div>
+        <p class="mb-1">Some placeholder content in a paragraph.</p>
+        <small>post by {{ post.author }}</small>
+      </a>
+    {% endfor %}
+  </div>
 
-    Posts
-
-
-  {% for post in posts %}
-    <div class="card mb-4">
-      <div class="card-header">
-        <a href="{% url 'detail' post.id %}">{{ post.title }}</a>
-      </div>
-      <div class="card-body">
-        <img src="{{ user.profile.image.url }}" alt="mdo" width="50" height="50" class="rounded-circle">
-        <blockquote class="blockquote mb-0">
-          <p>{{ post.content }}</p>
-          <footer class="blockquote-footer">{{ post.author }} <cite title="Source Title"> {{ post.date_posted|date:"m-d-Y" }}  </cite></footer>
-        </blockquote>
-      </div>
-    </div>
-  {% endfor %}
+</div>
 
 
 

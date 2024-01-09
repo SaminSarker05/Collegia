@@ -7,6 +7,7 @@ import requests
 from django import forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
+from django.db.models import Q
 
 
 def budget(request):
@@ -39,7 +40,7 @@ def search(request):
 
     if form.is_valid():
       name = form.cleaned_data['query']
-      results = Post.objects.filter(author__username__icontains=name)
+      results = Post.objects.filter(Q(author__username__icontains=name))
 
       context = {
         'form': form,
