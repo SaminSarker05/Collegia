@@ -6,11 +6,12 @@
       {% csrf_token %}
       <fieldset class="form-group">
         <p class="fs-5">Publish a Blog Post</p>
+        <p class="fs-7">(Can enter html code directly into content)</p>
         <!-- <legend class="border-bottom mb-4">Publish a Blog Post</legend> -->
         {{ form.as_p }}
       </fieldset>
       <div class="form-group">
-        <button type="submit">
+        <button type="submit" >
           Post
         </button>
       </div>

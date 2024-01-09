@@ -5,15 +5,59 @@
 <form method="POST" action="{% url 'search' %}" class="fs-5">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit" class="fs-7">Search</button>
+  <button type="submit" style="font-size: 0.8em;">Search</button>
 </form>
-<div style="margin-bottom: 4em;">
-{% if results %}
-  {% for post in results %}
-      {{ post.user.username }} - {{ post.title }} - {{ post.content }}
-  {% endfor %}
-{% endif %}
+
+<div class="list-group" style="margin-bottom: 4em; margin-top: 2em;">
+  {% if results %}
+    {% for post in results %}
+      <a href="{% url 'detail' post.id %}" class="list-group-item list-group-item-action" aria-current="true">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Blog: {{ post.title }}</h5>
+          <small>{{ post.date_posted|date:"m-d-Y" }}</small>
+        </div>
+        <p class="mb-1">Some placeholder content in a paragraph.</p>
+        <small>post by {{ post.author }}</small>
+      </a>
+    {% endfor %}
+  {% endif %}
+
+  <!-- <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">List group item heading</h5>
+      <small>3 days ago</small>
+    </div>
+    <p class="mb-1">Some placeholder content in a paragraph.</p>
+    <small>And some small print.</small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">List group item heading</h5>
+      <small class="text-body-secondary">3 days ago</small>
+    </div>
+    <p class="mb-1">Some placeholder content in a paragraph.</p>
+    <small class="text-body-secondary">And some muted small print.</small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">List group item heading</h5>
+      <small class="text-body-secondary">3 days ago</small>
+    </div>
+    <p class="mb-1">Some placeholder content in a paragraph.</p>
+    <small class="text-body-secondary">And some muted small print.</small>
+  </a> -->
 </div>
+
+<!-- <div style="margin-bottom: 4em;">
+  {% if results %}
+    {% for post in results %}
+      <div style="margin-top: 2em;">
+        <a> {{ post.title }} </a>
+      </div>
+    {% endfor %}
+  {% endif %}
+  
+</div> -->
 
   
 
