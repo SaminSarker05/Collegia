@@ -6,12 +6,6 @@ from .forms import FoodSearchForm, SearchForm
 import requests
 from django import forms
 
-def home(request):
-  context = {
-    'posts': Post.objects.all()
-  }
-  return render(request, 'core/home.html', context)
-
 
 def budget(request):
   return render(request, 'core/budget.html')
@@ -76,7 +70,16 @@ class PostListView(ListView):
   template_name = 'core/home.html'
   context_object_name = 'posts'
   ordering = ['-date_posted']
-  paginate_by = 2
+  paginate_by = 3
+
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    
+    # Add the top 3 most recent posts to the context
+    recent_posts = Post.objects.order_by('-date_posted')[:3]
+    context['recent_posts'] = recent_posts
+
+    return context
 
 class PostDetailView(DetailView):
   model = Post
