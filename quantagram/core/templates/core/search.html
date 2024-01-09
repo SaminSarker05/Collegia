@@ -1,21 +1,19 @@
 
-
-
 {% extends "core/base.html" %}
 {% block content %}
 
-<form method="POST" action="{% url 'search' %}">
+<form method="POST" action="{% url 'search' %}" class="fs-5">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit">Search</button>
+  <button type="submit" class="fs-7">Search</button>
 </form>
-
+<div style="margin-bottom: 4em;">
 {% if results %}
   {% for post in results %}
-      <!-- Display post details as needed -->
       {{ post.user.username }} - {{ post.title }} - {{ post.content }}
   {% endfor %}
 {% endif %}
+</div>
 
   
 

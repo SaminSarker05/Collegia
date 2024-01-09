@@ -5,4 +5,4 @@ class FoodSearchForm(forms.Form):
 
 
 class SearchForm(forms.Form):
-    query = forms.CharField(label='Search User...')
+    query = forms.CharField(label='Search for a Blog User...')
