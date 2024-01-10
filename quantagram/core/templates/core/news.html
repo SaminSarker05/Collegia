@@ -9,24 +9,31 @@
     <button type="submit" style="font-size: 0.8em;">Search</button>
     </form>
 
-    {% if news_info %}
+    <div class="list-group" style="margin-bottom: 4em; margin-top: 2em;">
+        {% if news_info %}
 
-        <div class="list-group">
-            {% for article in news_info %}
-            <a href="{{ article.url }}" class="list-group-item list-group-item-action mb-3" aria-current="true">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">{{ article.title }}</h5>
-                </div>
-                <p class="mb-1">{{ article.description }}</p>
-            </a>
-            {% endfor %}
-        </div>
+            <div class="list-group">
+                {% for article in news_info %}
 
-    {% else %}
-        {% if form.errors %}
-            <p style="color: red;">{{ form.errors }}</p>
+                <a href="{{ article.url }}" class="list-group-item list-group-item-action" aria-current="true">
+                    <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Article: {{ article.title }}</h5>
+                    <small>{{ article.publishedAt }}</small>
+                    </div>
+                    <p class="mb-1">{{ article.description|truncatewords:16 }}</p>
+                    <small>post by {{ article.author }}</small>
+                </a>
+                <br>
+
+                {% endfor %}
+            </div>
+
+        {% else %}
+            {% if form.errors %}
+                <p style="color: red;">{{ form.errors }}</p>
+            {% endif %}
         {% endif %}
-    {% endif %}
+    </div>
 
 </div>
 

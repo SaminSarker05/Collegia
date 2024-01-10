@@ -16,7 +16,7 @@
           <h5 class="mb-1">Blog: {{ post.title }}</h5>
           <small>{{ post.date_posted|date:"m-d-Y" }}</small>
         </div>
-        <p class="mb-1">Some placeholder content in a paragraph.</p>
+        <p class="mb-1">{{ post.content|truncatewords:16 }}</p>
         <small>post by {{ post.author }}</small>
       </a>
     {% endfor %}
