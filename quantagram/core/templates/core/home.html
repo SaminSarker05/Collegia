@@ -2,30 +2,6 @@
 {% block content %}
 
 
-
-<!-- <div style="display: flex; justify-content: left; align-items: left; flex-direction: column;">
-  {% for post in posts %}
-    <div class="card col-5 mb-7" style="min-height: 500px;">
-      <div class="card-header d-flex align-items-center">
-        <img src="{{ user.profile.image.url }}" alt="mdo" width="50" height="50" class="rounded-circle">
-        <div class="ms-3">
-          <h6 class="mb-0 fs-sm">{{ post.author }}</h6>
-          <span class="text-muted fs-sm">{{ post.date_posted|date:"m-d-Y" }}</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <a class="card-text" href="{% url 'detail' post.id %}">{{ post.title }}</a>
-        <p class="card-text">
-          {{ post.content }}
-        </p>
-      </div>
-      <div class="card-footer d-flex">
-        <button class="btn btn-link p-0 me-auto fw-bold" href="#">Like</button>
-        <button class="btn btn-link p-0 fw-bold" href="#">Note</button>
-      </div>
-    </div>
-  {% endfor %}
-</div> -->
 <div class="row g-5" style="margin-bottom: 4em;">
   <div class="col-md-8" style="padding-right: 3em;">
 
@@ -37,12 +13,7 @@
     </article>
     <br>
     {% endfor %}
-  
-
-
     {% if is_paginated %}
-    
-
       {% if page_obj.has_previous %}
         <a class="btn btn-outline-primary rounded-pill" href="?page=1">First</a>
         <a class="btn btn-outline-primary rounded-pill" href="?page={{ page_obj.previous_page_number }}">Previous</a>
@@ -60,11 +31,9 @@
         <a class="btn btn-outline-primary rounded-pill" href="?page={{ page_obj.next_page_number }}">Next</a>
         <a class="btn btn-outline-primary rounded-pill" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
       {% endif %}
-
     {% endif %}
 
   </div>
-  
 
   <div class="col-md-4">
     <div class="position-sticky" style="top: 2rem;">
@@ -76,8 +45,6 @@
       <div>
         <h4 class="fst-italic">Recent posts</h4>
         <ul class="list-unstyled">
-          
-
           {% for recent in recent_posts %}
             <li>
               <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{% url 'detail' recent.id %}">
@@ -89,16 +56,10 @@
             </li>
 
           {% endfor %}
-
-
         </ul>
       </div>
-
-      
     </div>
   </div>
 </div>
-
-
 
 {% endblock content %}
