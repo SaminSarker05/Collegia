@@ -14,7 +14,28 @@ def budget(request):
   return render(request, 'core/budget.html')
 
 
-def meal(request):
+
+# def news(request):
+  
+#   load_dotenv()
+#   apiKey = os.environ.get('API_KEY')
+
+#   url = ('https://newsapi.org/v2/everything?'
+#         'q=Apple&'
+#         'from=2023-12-10&'
+#         'sortBy=popularity&'
+#         'apiKey=a24435ec1852466f9e1c9634ffe57890')
+
+#   response = requests.get(url)
+
+#   pprint(response.text)
+
+
+
+
+
+
+def news(request):
   if request.method == 'POST':
     form = FoodSearchForm(request.POST)
     if form.is_valid():
@@ -53,19 +74,6 @@ def search(request):
 
   context = {'form': form}
   return render(request, 'core/search.html', context)
-
-
-
-def get_food_information(food_query):
-    base_url = "https://www.themealdb.com/api/json/v1/1/search.php?s="
-    url = f"{base_url}{food_query}"
-
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        return response.json()
-    else:
-        return None
 
 
 class PostListView(ListView):

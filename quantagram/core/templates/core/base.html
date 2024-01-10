@@ -25,8 +25,7 @@
 
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="{% url 'home' %}" class="nav-link fs-6" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="{% url 'budget' %}" class="nav-link fs-6">Budget</a></li>
-        <li class="nav-item"><a href="{% url 'meal' %}" class="nav-link fs-6">Meal Prep</a></li>
+        <li class="nav-item"><a href="{% url 'budget' %}" class="nav-link fs-6">News</a></li>
         <li class="nav-item"><a href="{% url 'search' %}" class="nav-link fs-6">Search</a></li>
         {% if user.is_authenticated %}
         <li class="nav-item"><a href="{% url 'create' %}" class="nav-link fs-6">Create Post</a></li>
@@ -70,8 +69,7 @@
   
       <ul class="nav col-md-4 justify-content-end">
         <li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-2 text-body-secondary fs-6">Home</a></li>
-        <li class="nav-item"><a href="{% url 'budget' %}" class="nav-link px-2 text-body-secondary fs-6">Budget</a></li>
-        <li class="nav-item"><a href="{% url 'meal' %}" class="nav-link px-2 text-body-secondary fs-6">Meal-Plan</a></li>
+        <li class="nav-item"><a href="{% url 'budget' %}" class="nav-link px-2 text-body-secondary fs-6">News</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary fs-6">About</a></li>
       </ul>
     </footer>
