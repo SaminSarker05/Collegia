@@ -1,0 +1,30 @@
+{% extends "core/base.html" %}
+{% block content %}
+
+
+<div style="margin-bottom: 4em;">
+    <form method="post" action="{% url 'news' %}" style="font-size: 1.2em; margin-bottom: 1em;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" style="font-size: 0.8em;">Search</button>
+    </form>
+
+    {% if news_info %}
+        <ul>
+            {% for article in news_info %}
+            <li>
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.description }}</p>
+                <a href="{{ article.url }}" target="_blank">Read more</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {% if form.errors %}
+            <p style="color: red;">{{ form.errors }}</p>
+        {% endif %}
+    {% endif %}
+    
+</div>
+
+{% endblock content %}

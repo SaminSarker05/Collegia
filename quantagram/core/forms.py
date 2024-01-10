@@ -1,7 +1,7 @@
 from django import forms
 
-class FoodSearchForm(forms.Form):
-    food_name = forms.CharField(label='Enter the name of the food')
+class NewsSearchForm(forms.Form):
+    query = forms.CharField(label='Enter...')
 
 
 class SearchForm(forms.Form):
