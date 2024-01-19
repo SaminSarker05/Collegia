@@ -73,3 +73,8 @@ Social media platform for college students to write posts, connect with peers, a
 </tr>
   
 </table>
+
+
+## Example Pages
+
+<img src="https://github.com/SaminSarker05/EtherBlock/blob/main/images/chain.png" width=80%>
