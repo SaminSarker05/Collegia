@@ -19,5 +19,20 @@ Social media platform for college students to write posts, connect with peers, a
 - `AWS EC2` : Cloud computing service for hosting application
 
 
-## Pages
+## Page Descriptions
 
+- *Home* : Displays all posts by users on the platform with links to recent posts
+- *Create* : Enables a user to 
+- *Home* : Displays all posts by users on the platform with links to recent posts
+- *Home* : Displays all posts by users on the platform with links to recent posts
+
+<table>
+<tr>
+<td width="33%"">
+`Home`
+</td>
+<td width="33%">
+The quick brown fox jumps over the lazy dog.
+</td>
+</tr>
+</table>
