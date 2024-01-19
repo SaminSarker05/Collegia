@@ -29,10 +29,10 @@ Social media platform for college students to write posts, connect with peers, a
 <table>
 <tr>
 <td width="33%"">
-`Home`
+<samp>Home</samp>
 </td>
-<td width="33%">
-The quick brown fox jumps over the lazy dog.
+<td width="66%">
+Displays all posts by users on the platform with links to recent posts
 </td>
 </tr>
 </table>
