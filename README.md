@@ -65,16 +65,7 @@ Social media platform for college students to write posts, connect with peers, a
 
 <tr>
 <td width="33%"">
-<samp>Settings/samp>
-</td>
-<td width="66%">
-<samp>Settings page for user to update profile paramaters</samp>
-</td>
-</tr>
-
-<tr>
-<td width="33%"">
-<samp>Settings/samp>
+<samp>Settings</samp>
 </td>
 <td width="66%">
 <samp>Settings page for user to update profile paramaters</samp>
