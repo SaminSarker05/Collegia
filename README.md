@@ -77,10 +77,17 @@ Social media platform for college students to write posts, connect with peers, a
 
 ## Example Pages
 
+- Home page
 <img src="https://github.com/SaminSarker05/Collegia/blob/main/images/home.png" width=80%>
 
+- Search page
 <img src="https://github.com/SaminSarker05/Collegia/blob/main/images/search.png" width=80%>
 
+- Profile page
 <img src="https://github.com/SaminSarker05/Collegia/blob/main/images/profile.png" width=80%>
 
+- Post page
 <img src="https://github.com/SaminSarker05/Collegia/blob/main/images/post.png" width=80%>
+
+
+## Link
