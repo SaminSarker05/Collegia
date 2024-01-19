@@ -32,7 +32,7 @@ Social media platform for college students to write posts, connect with peers, a
 <samp>Home</samp>
 </td>
 <td width="66%">
-Displays all posts by users on the platform with links to recent posts
+- <samp>Displays all posts by users on the platform with links to recent posts</samp>
 </td>
 </tr>
 </table>
