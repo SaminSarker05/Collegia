@@ -17,3 +17,7 @@ Social media platform for college students to write posts, connect with peers, a
 - `sqlite3` : Lightweight, serverless database engine for user and post models
 - `HTML, CSS, Bootstrap` : Structuring content for responsive and user-friendly design
 - `AWS EC2` : Cloud computing service for hosting application
+
+
+## Pages
+
