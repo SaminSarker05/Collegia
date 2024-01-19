@@ -32,7 +32,53 @@ Social media platform for college students to write posts, connect with peers, a
 <samp>Home</samp>
 </td>
 <td width="66%">
-- <samp>Displays all posts by users on the platform with links to recent posts</samp>
+<samp>Displays all posts by users on the platform with links to recent posts</samp>
 </td>
 </tr>
+
+<tr>
+<td width="33%"">
+<samp>Create</samp>
+</td>
+<td width="66%">
+<samp>Enables a user to write a new post with inline html code for syntax syling</samp>
+</td>
+</tr>
+
+<tr>
+<td width="33%"">
+<samp>News</samp>
+</td>
+<td width="66%">
+<samp>User can search recent news articles and topics with individual links to sources</samp>
+</td>
+</tr>
+
+<tr>
+<td width="33%"">
+<samp>Search</samp>
+</td>
+<td width="66%">
+<samp>Search feature for user posts</samp>
+</td>
+</tr>
+
+<tr>
+<td width="33%"">
+<samp>Settings/samp>
+</td>
+<td width="66%">
+<samp>Settings page for user to update profile paramaters</samp>
+</td>
+</tr>
+
+<tr>
+<td width="33%"">
+<samp>Settings/samp>
+</td>
+<td width="66%">
+<samp>Settings page for user to update profile paramaters</samp>
+</td>
+</tr>
+  
 </table>
