@@ -1,6 +1,6 @@
 # Collegia Hub
 
-Social media platform for college students to write posts, connect with peers, and research the news. Complete user authentication and database using Django ORM and auth. Search and autofill functionalities and CRUD operands with an integrated news-api for user research.
+<samp>Social media platform for college students to write posts, connect with peers, and research the news. Complete user authentication and database using Django ORM and auth. Search and autofill functionalities and CRUD operands with an integrated news-api for user research.</samp>
 
 - Live at http://3.15.199.55:8000/
 
